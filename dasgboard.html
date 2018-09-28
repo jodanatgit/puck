@@ -14,7 +14,8 @@
       var j = JSON.parse(line);
       console.log("Received JSON: ",j);
       elements.temp.setValue(j.temp);
-      elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " + Math.sqrt(j.mag.x*j.mag.x +j.mag.y*j.mag.y+ j.mag.z*j.mag.z) );
+      var strength = new Vec3(xyz).mag();
+      elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " + strength) );
     } catch(e) {
       console.log("Received: ",line);
     }
@@ -48,7 +49,7 @@
           // Now tell it to write data on the current light level to Bluetooth
           // 10 times a second. Also ensure that when disconnected, Puck.js
           // resets so the setInterval doesn't keep draining battery.
-          connection.write("setInterval(function(){Bluetooth.println(JSON.stringify({mag:Puck.mag()}));Bluetooth.println(JSON.stringify({temp:E.getTemperature()}));},1000);NRF.on('disconnect', function() {reset()});\n"
+          connection.write("setInterval(function(){Bluetooth.println(JSON.stringify({temp:E.getTemperature()}));},1000);setInterval(function(){Bluetooth.println(JSON.stringify({mag:Puck.mag()}));},1500);NRF.on('disconnect', function() {reset()});\n"
                            , function() { console.log("Ready..."); });
          }, 1500); //eo setTimeout
        }); //eo connection reset
