@@ -14,8 +14,8 @@
       var j = JSON.parse(line);
       console.log("Received JSON: ",j);
       elements.temp.setValue(j.temp);
-      var strength = new Vec3(j.mag).mag();
-      elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " + strength) );
+      //var strength = new Vec3(j.mag).mag();
+      elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " ) );
     } catch(e) {
       console.log("Received: ",line);
     }
