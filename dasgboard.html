@@ -14,7 +14,7 @@
       var j = JSON.parse(line);
       console.log("Received JSON: ",j);
       elements.temp.setValue(j.temp);
-     elements.log.log(j.temp.x + j.temp.y + j.temp.z + Math.sqrt(j.temp.x*j.temp.x +j.temp.y*j.temp.y+ j.temp.z*j.temp.z) );
+     elements.log.log(j.temp.x +" " + j.temp.y +" "+ j.temp.z+" " + Math.sqrt(j.temp.x*j.temp.x +j.temp.y*j.temp.y+ j.temp.z*j.temp.z) );
     } catch(e) {
       console.log("Received: ",line);
     }
