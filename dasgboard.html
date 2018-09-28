@@ -14,7 +14,7 @@
       var j = JSON.parse(line);
       console.log("Received JSON: ",j);
       elements.temp.setValue(j.temp);
-     elements.log.setValue(j.temp);
+     elements.log.text(j.temp);
     } catch(e) {
       console.log("Received: ",line);
     }
