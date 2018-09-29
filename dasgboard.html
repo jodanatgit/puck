@@ -17,6 +17,7 @@
       elements.temp.setValue(j.temp);
       //var strength = new Vec3(j.mag).mag();
       //elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " ) );
+     elements.log.log(line);
     } catch(e) {
       console.log("Received: ",line);
     }
@@ -51,7 +52,10 @@
           // 10 times a second. Also ensure that when disconnected, Puck.js
           // resets so the setInterval doesn't keep draining battery.
           connection.write("setInterval(function(){Bluetooth.println(JSON.stringify({temp:E.getTemperature()}))},1000);NRF.on('disconnect', function() {reset()});\n"
-                           , function() { console.log("Ready..."); });
+                           , function() { console.log("Ready..."); 
+                                         connection.write("setInterval(function(){Bluetooth.println(JSON.stringify({mag:Puck.mag()}))},1500);NRF.on('disconnect', function() {reset()});\n"
+                                         , function() { console.log("Ready..."); });
+                                         }, 1500); //eo setTimeout});
          }, 10000); //eo setTimeout
         // connection.write("setInterval(function(){Bluetooth.println(JSON.stringify({mag:Puck.mag()}))},1500);NRF.on('disconnect', function() {reset()});\n"
         //                   , function() { console.log("Ready..."); });
