@@ -14,10 +14,10 @@
       var j = JSON.parse(line);
       console.log("Received JSON: ",j);
      //alert(line);
-      if (j.temp) {elements.temp.setValue(j.temp);}
-      if (j.mag) {
-        var strength = new Vec3(j.mag).mag();
-        elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " + strength ) );
+      if (j.temp !== undefined) {elements.temp.setValue(j.temp);}
+      if (j.mag !== undefined) {
+        //var strength = new Vec3(j.mag).mag();
+        elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"--> " ) );
       }
      elements.log.log(line);
     } catch(e) {
