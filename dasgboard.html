@@ -17,11 +17,8 @@
       //elements.log.log(line);
      //alert(line);
       if (j.temp !== undefined) {elements.temp.setValue(j.temp);}
-     
-        //var strength = new Vec3(j.mag).mag();
-    // console.log(strength);
-      console.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"---> " );
-        elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"---> ") ;
+      var totmag = Math.sqrt(j.mag.x*j.mag.x + j.mag.y*j.mag.y + j.mag.z*j.mag.z)
+      elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"---> " + totmag) ;
      
     
     } catch(e) {
