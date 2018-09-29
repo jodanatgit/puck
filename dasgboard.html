@@ -16,10 +16,10 @@
       //elements.log.log(line);
      //alert(line);
       if (j.temp !== undefined) {elements.temp.setValue(j.temp);}
-      if (j.mag !== undefined) {
+     // if (j.mag !== undefined) {
         var strength = new Vec3(j.mag).mag();
         elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"---> " + strength) ;
-      }
+      //}
     
     } catch(e) {
       console.log("Received: ",line);
