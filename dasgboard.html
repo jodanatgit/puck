@@ -19,8 +19,8 @@
       if (j.temp !== undefined) {elements.temp.setValue(j.temp);}
       var totmag = Math.sqrt(j.mag.x*j.mag.x + j.mag.y*j.mag.y + j.mag.z*j.mag.z)
       elements.log.log(j.mag.x +" " + j.mag.y +" "+ j.mag.z+"---> " + totmag) ;
-     var strength = new Vec3(j.temp.x,j.temp.y,j.temp.z).mag();
-      elements.mag.setValue(strength) ;
+     //var strength = new Vec3(j.temp.x,j.temp.y,j.temp.z).mag();
+      elements.mag.setValue(totmag) ;
      
     
     } catch(e) {
