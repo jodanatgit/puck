@@ -1,4 +1,13 @@
-<script>
+<html>
+ <head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=210, initial-scale=1">
+ </head>
+ <body style="width:210px;height:450px">
+  <link href="https://espruino.github.io/TinyDash/tinydash.css" rel="stylesheet">
+  <script src="https://espruino.github.io/TinyDash/tinydash.js"></script>
+  <script src="https://www.puck-js.com/puck.js"></script>  
+   <script>
 var kb = require("ble_hid_keyboard");
 NRF.setServices(undefined, { hid : kb.report });
 var reset_timer;
@@ -50,4 +59,5 @@ setWatch(function(e) {
   }
 }, BTN, {edge:"falling", debounce:50, repeat:true});
 </script>
-
+  </body>
+</html>
